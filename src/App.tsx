@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useStyles } from './styles';
 import axios from 'axios';
 import { Game } from './interfaces/game.interface';
+import { GameCard } from './components/GameCard';
 import { Container, Typography, Box } from '@material-ui/core';
 
 const App = () => {
@@ -43,7 +44,15 @@ const App = () => {
       <Box>
         <Typography variant='h2'>GameApp</Typography>
       </Box>
-      <Typography>Test</Typography>
+      <Box>
+        {gamesData ? (
+          gamesData.map((game) => {
+            return <GameCard key={game.id} game={game} />;
+          })
+        ) : (
+          <Typography>Loading...</Typography>
+        )}
+      </Box>
     </Container>
   );
 };
