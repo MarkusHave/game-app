@@ -12,4 +12,13 @@ export const useStyles = makeStyles({
     height: 0,
     paddingTop: '56.25%',
   },
+  paginationBox: {
+    margin: 20,
+    border: 'solid',
+    display: 'flex',
+    borderColor: 'black',
+    borderWidth: '1px',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
